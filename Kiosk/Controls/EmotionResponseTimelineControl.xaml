@@ -10,7 +10,7 @@
     d:DesignWidth="400"
     x:Name="userControl">
 
-    <Grid Background="#FF222222">
+    <Grid Background="White">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
@@ -18,10 +18,10 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <TextBlock Margin="6,6,6,0" Text="Average Crowd Emotion" Foreground="Gray" Style="{StaticResource BaseTextBlockStyle}"/>
-        <TextBlock Margin="6,0,6,0" Text="Last few minutes" Foreground="Gray" Style="{StaticResource CaptionTextBlockStyle}" Opacity="0.5" Grid.Row="1"/>
+        <TextBlock Margin="6,6,6,0" Text="Average Crowd Emotion" Foreground="Black" Style="{StaticResource BaseTextBlockStyle}"/>
+        <TextBlock Margin="6,0,6,0" Text="Last few minutes" Foreground="Black" Style="{StaticResource CaptionTextBlockStyle}" Opacity="0.5" Grid.Row="1"/>
 
-        <Rectangle Height="1" Margin="0,6,0,0" Fill="Gray" Grid.Row="2"/>
+        <Rectangle Height="1" Margin="0,6,0,0" Fill="Black" Grid.Row="2"/>
 
         <Grid Grid.Row="3" >
             <Grid.RowDefinitions>
@@ -31,7 +31,7 @@
             </Grid.RowDefinitions>
 
 
-            <Rectangle Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Center" Height="1" Fill="White" Opacity="0.1"/>
+            <Rectangle Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Center" Height="1" Fill="Black" Opacity="0.1"/>
 
             <Grid x:Name="graph" Grid.Row="1" Grid.Column="1"/>
 
