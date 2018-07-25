@@ -64,7 +64,7 @@ namespace IntelligentKioskSample.Views
         internal async System.Threading.Tasks.Task AddAsync(string customerId, string location, double emotionScore)
         {
             // Parse the connection string and return a reference to the storage account.
-            //if (_tableClient == null)
+            if (_tableClient == null)
             {
                 CloudStorageAccount storageAccount = CloudStorageAccount.Parse("DefaultEndpointsProtocol=https;AccountName=storage2018hack;AccountKey=zdPGuU+vEPjYlu/k6ddJQFAvwQWuSxckbWCAHaKKWCtjw7c+Puy03aBZ0iCl1S62/78rhBehmb7Vk213UtQAWg==;EndpointSuffix=core.windows.net");
                 _tableClient = storageAccount.CreateCloudTableClient();
