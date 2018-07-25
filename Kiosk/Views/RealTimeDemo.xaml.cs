@@ -238,7 +238,6 @@ namespace IntelligentKioskSample.Views
 
                 this.emotionDataTimelineControl.DrawEmotionData(averageScores);
 
-<<<<<<< HEAD
                 foreach (var person in e.IdentifiedPersons)
                 {
                     Face face = (Face)e.DetectedFaces.FirstOrDefault(f => f.FaceId == person.FaceId);
