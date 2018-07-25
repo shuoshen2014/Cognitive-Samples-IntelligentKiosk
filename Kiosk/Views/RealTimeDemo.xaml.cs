@@ -37,6 +37,7 @@ using Microsoft.ProjectOxford.Face.Contract;
 using ServiceHelpers;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
@@ -46,6 +47,7 @@ using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
+
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -232,8 +234,51 @@ namespace IntelligentKioskSample.Views
                 };
 
                 this.emotionDataTimelineControl.DrawEmotionData(averageScores);
+
+                //using (SqlConnection connection = new SqlConnection("connectString"))
+                //{
+                //    String query = "INSERT INTO dbo.LiveResults (id,xx,xx,xx) VALUES (xxx)";
+
+                //    using (SqlCommand command = new SqlCommand(query, connection))
+                //    {
+                //        connection.Open();
+                //        int result = command.ExecuteNonQuery();
+
+                //        if (result < 0)
+                //            Console.WriteLine("Error inserting data into Database!");
+                //    }
+                //}
+
+                //SaveToStorage(e);
             }
         }
+
+        //public class CustomerEntity : TableEntity
+        //{
+        //    public CustomerEntity(string lastName, string firstName)
+        //    {
+        //        this.PartitionKey = lastName;
+        //        this.RowKey = firstName;
+        //    }
+
+        //    public CustomerEntity() { }
+
+        //    public string Email { get; set; }
+
+        //    public string PhoneNumber { get; set; }
+        //}
+
+        //private class LiveResult
+        //{
+        //    public string Name { get; set; }
+        //    public string Location { get; set; }
+        //    public string Timeticks { get; set; }
+        //}
+
+        //private void SaveToStorage(ImageAnalyzer e)
+        //{
+        //    //DateTime 
+        //}
 
         private void ShowTimelineFeedbackForNoFaces()
         {

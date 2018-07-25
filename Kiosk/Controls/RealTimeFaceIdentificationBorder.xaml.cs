@@ -74,10 +74,10 @@ namespace IntelligentKioskSample.Controls
                 this.captionTextHeader.Text = string.Format("{0}, {1}", roundedAge.ToString(), gender);
             }
 
-            if (uniqueId != null)
-            {
-                this.captionTextSubHeader.Text = string.Format("Face Id: {0}", uniqueId);
-            }
+            //if (uniqueId != null)
+            //{
+            //    this.captionTextSubHeader.Text = string.Format("Face Id: {0}", uniqueId);
+            //}
 
             this.captionBorder.Visibility = Visibility.Visible;
             this.captionBorder.Margin = new Thickness(this.faceRectangle.Margin.Left - (this.captionBorder.Width - this.faceRectangle.Width) / 2,

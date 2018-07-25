@@ -11,7 +11,7 @@
 
         
     <Grid x:Name="MainGrid" 
-            EntranceNavigationTransitionInfo.IsTargetElement="True" Background="#FF262626">
+            EntranceNavigationTransitionInfo.IsTargetElement="True" Background="White">
 
         <Grid.RowDefinitions>
             <RowDefinition Height="0.02*" />
@@ -33,8 +33,8 @@
         </Grid>
 
         <StackPanel Grid.Row="1">
-            <TextBlock Text="Realtime Crowd Insights Sample" Foreground="White" HorizontalAlignment="Center" FontFamily="Segoe UI Light" Style="{StaticResource HeaderTextBlockStyle}"/>
-            <TextBlock Text="Deriving realtime crowd insights from age, gender, emotion, face identification and unique face tracking" HorizontalAlignment="Center" FontFamily="Segoe UI Light"  Style="{StaticResource SubtitleTextBlockStyle}" FontStyle="Italic"/>
+            <TextBlock Text="Guest Insights" Foreground="#0097FE" FontWeight="Bold" HorizontalAlignment="Center" FontFamily="Proxima Nova" Style="{StaticResource HeaderTextBlockStyle}"/>
+            <TextBlock Text="Deriving realtime guest insights from age, gender, emotion, face identification and unique face tracking" Foreground="Black" HorizontalAlignment="Center" FontFamily="Segoe UI Light"  Style="{StaticResource SubtitleTextBlockStyle}" FontStyle="Italic"/>
         </StackPanel>
 
         <Grid Grid.Row="5" Height="165">
