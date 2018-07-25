@@ -67,6 +67,7 @@ namespace IntelligentKioskSample.Views
 
         private DemographicsData demographics;
         private Dictionary<Guid, Visitor> visitors = new Dictionary<Guid, Visitor>();
+        private StorageServiceHelpers _storageServiceHelper;
 
         public RealTimeDemo()
         {
@@ -79,6 +80,8 @@ namespace IntelligentKioskSample.Views
             this.cameraControl.FilterOutSmallFaces = true;
             this.cameraControl.HideCameraControls();
             this.cameraControl.CameraAspectRatioChanged += CameraControl_CameraAspectRatioChanged;
+
+            this._storageServiceHelper = new StorageServiceHelpers();
         }
 
         private void CameraControl_CameraAspectRatioChanged(object sender, EventArgs e)
@@ -232,7 +235,29 @@ namespace IntelligentKioskSample.Views
                 };
 
                 this.emotionDataTimelineControl.DrawEmotionData(averageScores);
+
+                foreach (var person in e.IdentifiedPersons)
+                {
+                    Face face = (Face)e.DetectedFaces.FirstOrDefault(f => f.FaceId == person.FaceId);
+                    if (face != null)
+                    {
+                        this.PersistEmotionData(person.Person.Name, "restaurant1", GetNetResponseScore(face.FaceAttributes.Emotion));
+                    }
+                }
             }
+        }
+
+        private double GetNetResponseScore(EmotionScores emotionScores)
+        {
+            double positiveEmotionResponse = Math.Min(emotionScores.Happiness + emotionScores.Surprise, 1);
+            double negativeEmotionResponse = Math.Min(emotionScores.Sadness + emotionScores.Fear + emotionScores.Disgust + emotionScores.Contempt, 1);
+            double netResponse = positiveEmotionResponse - negativeEmotionResponse;
+            return netResponse;
+        }
+
+        private void PersistEmotionData(string customerId, string location, double emotionScore)
+        {
+            _storageServiceHelper.AddAsync(customerId, location, emotionScore);
         }
 
         private void ShowTimelineFeedbackForNoFaces()
