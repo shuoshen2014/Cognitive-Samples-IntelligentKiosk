@@ -531,7 +531,8 @@ namespace IntelligentKioskSample.Controls
             {
                 if (this.ShowDialogOnApiErrors)
                 {
-                    await Util.GenericApiCallExceptionHandler(ex, "Error capturing photo.");
+                    // Hack2018: hide the showing the error dialog
+                    // await Util.GenericApiCallExceptionHandler(ex, "Error capturing photo.");
                 }
             }
             finally
